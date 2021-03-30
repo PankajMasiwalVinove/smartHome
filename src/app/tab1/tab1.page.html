@@ -1,17 +1,82 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      App name
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen>
+  <ion-grid style="height: 100%; background: white !important; display: flex; flex-flow: column;">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+
+    <ion-row style="height: 90%;">
+
+      <ion-col size="12"
+        style="  border-top-left-radius: 80px;">
+        <ion-grid style="background: transparent !important; height: 100%; display: flex; flex-flow: column;">
+          <ion-row style="flex-grow: 1; background: transparent;">
+            <ion-col class="ion-text-center" style="background: transparent;">
+              <div class="scrolling-wrapper">
+                <ion-col class="ion-text-center" style="background: transparent; ">
+          <img class="imag" src ="/assets/img/livingroom.jpg" >
+                </ion-col>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row style="min-height: 15%;" routerLink="/chart" routerDirection="root">
+            <ion-col class="ion-text-center"
+              style="border-top-left-radius: 80px;border-top-right-radius: 80px;margin:20px;  border-bottom-right-radius: 80px;; border-bottom-left-radius: 80px;  background-image: linear-gradient(to right, #bbdbfb , rgb(236, 232, 232));">
+              <ion-grid id="statistics" style="padding-top: 20px; height: 100%;">
+                <ion-row style="height: 50%;">
+                  <ion-col class="ion-align-self-center">
+                    <h2>POWER PROJECTION</h2>
+                    <ion-row>
+                      <ion-col class="ion-align-self-center">
+                        <h3><b>4.21kW</b></h3>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+          <ion-row style="min-height: 30%;" routerLink="/chart" routerDirection="root">
+            <ion-col class="ion-text-center"
+              style="border-top-left-radius: 80px;border-top-right-radius: 80px; border-bottom-right-radius: 80px;  background-image: linear-gradient(to right,#bbdbfb , rgb(236, 232, 232));border-bottom-left-radius: 80px;margin-bottom: 50px;">
+              <ion-grid id="statistics" style="padding-top: 20px; height: 100%;">
+                <ion-row style="height: 50%;">
+                  <ion-col class="ion-align-self-center">
+                    <h2>BUILDING POWER</h2>
+                    <ion-row>
+                      <ion-col class="ion-align-self-center">
+                        <p>Production (solar)</p>
+                        <h3><b>4.21kW</b></h3>
+                      </ion-col>
+                      <ion-col class="ion-align-self-center">
+                        <p>Consumption (usage)</p>
+                        <h3><b>7.31kW</b></h3>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="ion-align-self-center">
+                        <p>Net</p>
+                        <h3><b>3.10kW consumption</b></h3>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
