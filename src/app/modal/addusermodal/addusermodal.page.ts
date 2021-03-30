@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpService } from "./../../../services/https.service";
+// import { HttpService } from "./../../../services/https.service";
 
 @Component({
   selector: 'app-addusermodal',
@@ -10,16 +10,16 @@ import { HttpService } from "./../../../services/https.service";
 export class AddusermodalPage implements OnInit {
 
   constructor(
-    private httpService:HttpService,
+    // private httpService:HttpService,
   ) { }
 
   ngOnInit() {
   }
 
   addUser() {
-    this.httpService.addUser().subscribe(user => {
-      console.log(user);
-    });
+    // this.httpService.addUser().subscribe(user => {
+    //   console.log(user);
+    // });
   }
 
 }
