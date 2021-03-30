@@ -2,27 +2,22 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { ModalController } from '@ionic/angular';
 import { InfomodalPage } from '../modal/infomodal/infomodal.page';
-import { BillinputmodalPage } from "../modal/billinputmodal/billinputmodal.page"
+import { BillinputmodalPage } from '../modal/billinputmodal/billinputmodal.page';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page implements OnInit {
-
   @ViewChild('barChart') barChart;
-
 
   bars: any;
   colorArray: any;
 
-  constructor(
-    public modalController: ModalController,
-  ) { }
+  constructor(public modalController: ModalController) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ionViewDidEnter() {
     this.createBarChart();
@@ -30,16 +25,16 @@ export class Tab2Page implements OnInit {
 
   async openInfoModal() {
     const modal = await this.modalController.create({
-      component: InfomodalPage
+      component: InfomodalPage,
     });
     return await modal.present();
   }
 
   async openBillInputModal() {
     const modal = await this.modalController.create({
-      component: BillinputmodalPage
+      component: BillinputmodalPage,
     });
-    console.log("model.......",modal);
+    console.log('model.......', modal);
     return await modal.present();
   }
 
@@ -48,31 +43,27 @@ export class Tab2Page implements OnInit {
       type: 'bar',
       data: {
         labels: ['Living Room', 'Kitchen', 'Bathroom'],
-        datasets: [{
-          label: 'Kwh',
-          data: [2.5, 3.8, 5, 6.9,],
-          backgroundColor: '#40BFCF', // array should have same number of elements as number of dataset
-          borderColor: '#40BFCF',// array should have same number of elements as number of dataset
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'Kwh',
+            data: [2.5, 3.8, 5, 6.9],
+            backgroundColor: '#bbdbfb',
+            borderColor: 'rgb(236, 232, 232)',
+            borderWidth: 3,
+          },
+        ],
       },
       options: {
         scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
     });
   }
-
 }
-
-
-
-
-
-
-

@@ -4,7 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content
+  [fullscreen]="true"
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"
+>
   <ion-grid>
     <ion-row>
       <ion-col size="12" class="panel" margin-start margin-end margin-bottom>
@@ -77,12 +83,15 @@
             <ion-row class="del">
               <ion-button (click)="removeUser(item)"> Del </ion-button>
             </ion-row>
-          </ion-col> </ion-row
-        ><br /><br />
-        <ion-row class="del">
+          </ion-col>
+        </ion-row>
+        <!-- <div slot="fixed"> -->
+
+        <ion-row slot="fixed" class="del">
           <ion-button (click)="addUser()"> Add User </ion-button>
         </ion-row>
       </ion-col>
     </ion-row>
+    <!-- </div> -->
   </ion-grid>
 </ion-content>
