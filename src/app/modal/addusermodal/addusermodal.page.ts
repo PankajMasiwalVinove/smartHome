@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 // import { HttpService } from "./../../../services/https.service";
 
@@ -8,18 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addusermodal.page.scss'],
 })
 export class AddusermodalPage implements OnInit {
+  constructor(private modalController: ModalController) {}
 
-  constructor(
-    // private httpService:HttpService,
-  ) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addUser() {
     // this.httpService.addUser().subscribe(user => {
     //   console.log(user);
     // });
   }
-
+  async closeModal() {
+    await this.modalController.dismiss();
+  }
 }
